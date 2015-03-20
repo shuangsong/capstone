@@ -1,0 +1,122 @@
+---
+title: "Capstone-Natrual language processing"
+author: "Shuang"
+date: "Thursday, March 12, 2015"
+output: html_document
+---
+task0 Introduction and background of natrual language processing
+---
+Natrual language processing a type of artificial intelligence that examines and uses patterns in data to improve a program's own understanding. It is helpful to grab useful features from multiple communication platform such as tweet, blogs etc. It structured real-world information into computer-understandable data. The process of doing NLP is cleaning and analyzing text data, then building and sampling from a predictive text model. This project uses the files named LOCALE.blogs.txt where LOCALE is the each of the four locales en_ US,de_ DE, ru_ RU and fi_FI. The data is from a corpus called HC Corpora (www.corpora.heliohost.org). See the readme file at http://www.corpora.heliohost.org/aboutcorpus.html for details on the corpora available. 
+
+
+load in data set
+```{r chunck 1, }
+#create a new working directory that is directly pointing to the folder contains 
+#blogs, news and tweets( english data)
+
+rm(list=ls())
+getwd()
+data_path<-paste(getwd(),"/final/en_US", sep="")
+setwd(data_path)
+#package I use to do this project:
+library(ggplot2)
+library(tm)???#text mining 
+library(NLP)
+library(stringr) # package for handling string in R
+library(R.utils)
+library(SnowballC)
+library(RWeka)
+library(qdap) # count word
+library(stringi)
+#read in the data and read several lines of data:
+twitts<- file("en_US.twitter.txt",encoding = "UTF-8") 
+news<- file("en_US.news.txt", open="rb") 
+blogs<- file("en_US.blogs.txt", open="rb") 
+```
+
+
+summary of data
+```{r chunck 2, }
+#see how many lines of data(run bash command in R script)
+#command should be bash style:
+twitts_path<-"C:/Users/stephanie song/Desktop/final/en_US/en_US.twitter.txt"
+R.utils::countLines(twitts_path)
+news_path<-"C:/Users/stephanie song/Desktop/final/en_US/en_US.news.txt"
+R.utils::countLines(news_path)
+blogs_path<-"C:/Users/stephanie song/Desktop/final/en_US/en_US.blogs.txt"
+R.utils::countLines(blogs_path)
+# see first 5 lines in each data: 
+twitts<-readLines(twitts)
+news<-readLines(news)
+blogs<-readLines(blogs)
+#count words in each data:
+sum(sapply(gregexpr("\\W+", twitts), length))
+sum(sapply(gregexpr("\\W+", news), length))
+sum(sapply(gregexpr("\\W+", blogs), length))
+
+
+```
+
+task 1 
+---
+Preprocessing data:
+```{r chunck 4, }
+#sampling : 
+#Since we don't need to load in and use all of the data, I would like to just read 
+#several lines of each data and conbine them into one data.
+#ramdom select several lines in each data and combine them into one data -all.
+set.seed(1233)
+ran_twitts<-sample(length(twitts), 2000, replace=FALSE)
+
+
+
+
+
+```
+
+
+
+
+
+
+
+
+task2  
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
