@@ -18,8 +18,8 @@ shinyUI(navbarPage("JHU Capstone project shiny app-NLP in R",
                    
                                     mainPanel(
                                             
-                                            h4("Output"),
-                                            verbatimTextOutput("output")
+                                            h4("N-grams Prediction Output"),
+                                            textOutput("textoutput")
                                             
                                     )
                             )
