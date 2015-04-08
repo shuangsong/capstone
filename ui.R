@@ -60,7 +60,10 @@ shinyUI(navbarPage("JHU Capstone project shiny app-NLP in R",
                    <h3>How to predict with this shiny app?</h3>
                    <p>If you type nothing in the input text, then on the main panel it returns a sentence.
                    Type a sentence and select which type of ngram prediction you would like to do with, then click
-                   "Update" button to see if there shows the predicted words on the main panel.</p>
+                   "Update" button to see if there shows the predicted words on the main panel.
+                   What you entered must be more than one word, if you entered just one word or nothing, 
+                   it will returns "please enter some words". If it has no prediction on the sentence, it will returns"
+                   no prediction" .</p>
                    <h3>Visualization of this project</h3>
                     <img src="C:/Users/stephanie song/Desktop/wordcloud.jpg" />
                     <img src="C:/Users/stephanie song/Desktop/word.jpg" />                                              

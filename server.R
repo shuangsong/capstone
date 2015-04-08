@@ -22,9 +22,10 @@ nextword<-function(radiobutton, inputText,input){
 shinyServer(function(input, output,session) {
         radiobutton<-reactive({input$radiobutton})
         inputText<-reactive({input$text})
-        output$textoutput<-renderText({
+        output$textoutput<-renderPrint({
                 word<-nextword(radiobutton(),inputText,input)
                 word
+                
         })
 })
 
