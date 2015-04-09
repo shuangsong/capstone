@@ -17,21 +17,21 @@ App use: on mobile phone.
 Procedure of project: 
 ========================================================
 
--Read in data and Basic analysis
+-Read in data and Basic analysis:Read in twitts, news and blogs data and randomly select 2000 lines of each data(my laptop RAM is very limited).
 
--Sample data and paste into one and make corpus and do the cleaning
+-Make corpus, clean the corpus, tokenized corpus, then create termdocumentmatrix for (unigram, bigram, trigram, and 4-gram(quagram))
 
 -Exploratory analysis
 
--Transfer 1,2,3,4grams to data frame
+-Convert tdm to data frame for each gram type(the data frame contains term names, count, and probability that it ocours in the data frame)
 
--Create prediction model with unigram, bigram, trigram and quadgram
-
--Smooth n-gram models that are more accurate and fast, efficient.(back off)
+-Create function that do the prediction and return terms that mostly will be the next word
 
 About this shiny app:
 ========================================================
+How to predict with this shiny app?
 
+If you type nothing in the input text, then on the main panel it returns a sentence. Type a sentence and select which type of ngram prediction you would like to do with, then click "Update" button to see if there shows the predicted words on the main panel. What you entered must be more than one word, if you entered just one word or nothing, it will returns "please enter some words". If it has no prediction on the sentence, it will returns" no prediction" .
 
 
 
@@ -49,5 +49,5 @@ References and link of NLP resource:
 
 4,http://en.wikipedia.org/wiki/Katz%27s_back-off_model
 
-5, shiny app: 
+5, shiny app: http://shuangsong.shinyapps.io/capstone/ 
 
