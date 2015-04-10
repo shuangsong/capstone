@@ -27,4 +27,5 @@ References and link of NLP resource:
 
 3, http://en.wikipedia.org/wiki/N-gram#n-grams_for_approximate_matching
 
-4,http://en.wikipedia.org/wiki/Katz%27s_back-off_model
+4, http://en.wikipedia.org/wiki/Katz%27s_back-off_model
+5, R pubs: http://rpubs.com/shuangsong/72194
