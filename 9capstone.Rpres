@@ -3,14 +3,9 @@ JHU Capstone project-NLP project
 author: Stephanie S
 date: 04/26/2015
 transition: rotate
-font-import: http://fonts.googleapis.com/css?family=Risque
-font-family: 'Risque'
 
-Introduction: 
-========================================================
 
-This project is using own knowledge of data science and basic knowledge of NLP(natural language processing) in R to build an app that can predict next word with given sentences. The resource link is : www.corpora.heliohost.org. The core of this project on predicting is that with the background of Markov chain rule(n-gram prediction), and Katz back off model. As experience, trigram model is better prediction than bigram, unigram, or higher n-gram model, for the reason that it has lower perplexity.
-
+This project is using own knowledge of data science and basic knowledge of NLP(natural language processing) in R to build an app that can predict next word with given sentences. The resource link is : www.corpora.heliohost.org.
 App use: on mobile phone.
 
 
@@ -21,33 +16,29 @@ Procedure of project:
 
 -Make corpus, clean the corpus, tokenized corpus, then create termdocumentmatrix for (unigram, bigram, trigram, and 4-gram(quagram))
 
--Exploratory analysis
-
 -Convert tdm to data frame for each gram type(the data frame contains term names, count, and probability that it ocours in the data frame)
 
--Create function that do the prediction and return terms that mostly will be the next word
+-Create function that do the prediction and return terms that mostly will be the next word.
 
 About this shiny app:
 ========================================================
-How to predict with this shiny app?
+
+
+![alt text] (example.jpg)
+
+How to use this app?
+========================================================
 
 If you type nothing in the input text, then on the main panel it returns a sentence. Type a sentence and select which type of ngram prediction you would like to do with, then click "Update" button to see if there shows the predicted words on the main panel. What you entered must be more than one word, if you entered just one word or nothing, it will returns "please enter some words". If it has no prediction on the sentence, it will returns" no prediction" .
 
+The output(if can predict, it will return a string of words--from the most likely words to the least likely words that appear in the data I read in. (for example: input: "we went to new york","the first", "the last"--you can try it)
 
 
-
-
-
-References and link of NLP resource: 
+Algorithm for this app: 
 ========================================================
+It basically use Markov chain rule to do the prediction: Bigram: takes last one word and search through bigram data frame and find the possible terms; same with trigram(take last two words) and quagram (take last three words)prediction methods.
 
-1, https://class.coursera.org/nlangp-001/lecture/51
+Improve in the future:
 
-2, https://class.coursera.org/nlp/lecture
-
-3, http://en.wikipedia.org/wiki/N-gram#n-grams_for_approximate_matching
-
-4,http://en.wikipedia.org/wiki/Katz%27s_back-off_model
-
-5, shiny app: http://shuangsong.shinyapps.io/capstone/ 
-
+It can predict next word if the input within the data frame(readin some sources data twitts, blogs, news)if it doesn't meet, it will return no prediction(that is defect). Future improvement should be done that it can predict a long distance sentence and use sophisticated Katz back off model.
+Click here for a try: http://shuangsong.shinyapps.io/capstone/ 
